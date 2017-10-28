@@ -1,5 +1,5 @@
 /******************************************************************************************
-            function:¸ÃÎÄ¼şÖ÷Òª²âÊÔÒ»ÏÂ"ÉîÈëC++11´úÂëÓÅ»¯Óë¹¤³Ì¼¶Ó¦ÓÃ"(È«²¿ÄÚÈİÀ´×Ô¸ÃÊé£©
+            function:è¯¥æ–‡ä»¶ä¸»è¦æµ‹è¯•ä¸€ä¸‹"æ·±å…¥C++11ä»£ç ä¼˜åŒ–ä¸å·¥ç¨‹çº§åº”ç”¨"(å…¨éƒ¨å†…å®¹æ¥è‡ªè¯¥ä¹¦ï¼‰
 			author:Demon
             Time:2017/10/28
 *******************************************************************************************/
@@ -9,15 +9,15 @@
 #include<type_traits>
 using namespace std;
 
-///////¡ñ¡ñ¡ñ¡ñ¡ñ¡ñ 3.1 type_traits ÀàĞÍİÍÈ¡
+///////â—â—â—â—â—â— 3.1 type_traits ç±»å‹èƒå–
 
-//1.È¦¸´ÔÓ¶È£¨´Óº¯ÊıµÚÒ»ĞĞ¿ªÊ¼£¬Ò»Ö±ÍùÏÂ¿´³ÌĞò¡£Ò»µ©Óöµ½ if,while,repeat,and,or¾Í¼Ó1£¬
-//  caseÓï¾äÖĞÃ¿Ò»ÖÖÇé¿ö¾Í¼Ó1.
+//1.åœˆå¤æ‚åº¦ï¼ˆä»å‡½æ•°ç¬¬ä¸€è¡Œå¼€å§‹ï¼Œä¸€ç›´å¾€ä¸‹çœ‹ç¨‹åºã€‚ä¸€æ—¦é‡åˆ° if,while,repeat,and,orå°±åŠ 1ï¼Œ
+//  caseè¯­å¥ä¸­æ¯ä¸€ç§æƒ…å†µå°±åŠ 1.
 
 
-///////¡ñ¡ñ¡ñ 3.1.1 »ù±¾µÄtype_traits
+///////â—â—â— 3.1.1 åŸºæœ¬çš„type_traits
 
-//1.¼òµ¥µÄtype_traits,Ö±½Ó´Óstd::integral_constantÅÉÉú
+//1.ç®€å•çš„type_traits,ç›´æ¥ä»std::integral_constantæ´¾ç”Ÿ
 
 //template<typename type>
 //struct A : std::integral_constant<int,6>
@@ -25,9 +25,9 @@ using namespace std;
 //
 //};
 
-//2.ÀàĞÍÅĞ¶¨µÄtype_traits
+//2.ç±»å‹åˆ¤å®šçš„type_traits
 
-//3.ÅĞ¶ÏÁ½¸öÀàĞÍÖ®¼äµÄ¹ØÏµµÄtraits
+//3.åˆ¤æ–­ä¸¤ä¸ªç±»å‹ä¹‹é—´çš„å…³ç³»çš„traits
 
 //struct A
 //{
@@ -43,9 +43,9 @@ using namespace std;
 //};
 
 
-//4.ÀàĞÍµÄ×ª»¯traits
+//4.ç±»å‹çš„è½¬åŒ–traits
 
-//ÒÆ³ıºÍÌí¼ÓÒıÓÃµÄÀı×Ó
+//ç§»é™¤å’Œæ·»åŠ å¼•ç”¨çš„ä¾‹å­
 /*
 template<class T>
 struct Construct
@@ -66,7 +66,7 @@ private:
 };
 */
 
-//Ê¹ÓÃstd::decay±£´æº¯ÊıÖ¸Õë
+//ä½¿ç”¨std::decayä¿å­˜å‡½æ•°æŒ‡é’ˆ
 /*
 int test(int a)
 {
@@ -75,10 +75,10 @@ int test(int a)
 */
 
 
-///////¡ñ¡ñ¡ñ 3.1.2Ìõ¼şÑ¡ÔñµÄtraits
+///////â—â—â— 3.1.2æ¡ä»¶é€‰æ‹©çš„traits
 
 
-///////¡ñ¡ñ¡ñ 3.1.3 »ñÈ¡¿Éµ÷ÓÃ¶ÔÏó·µ»ØÀàĞÍµÄtraits(std::result_of)
+///////â—â—â— 3.1.3 è·å–å¯è°ƒç”¨å¯¹è±¡è¿”å›ç±»å‹çš„traits(std::result_of)
 
 //class A
 //{
@@ -91,9 +91,9 @@ int test(int a)
 //	}
 //};
 
-///////¡ñ¡ñ¡ñ 3.1.4¸ù¾İÌõ¼ş½ûÓÃ»òÕßÆô¶¯Ä³Ğ©ÀàĞÍµÄtraits
+///////â—â—â— 3.1.4æ ¹æ®æ¡ä»¶ç¦ç”¨æˆ–è€…å¯åŠ¨æŸäº›ç±»å‹çš„traits
 
-//1.ÏŞ¶¨·µ»ØÖµ
+//1.é™å®šè¿”å›å€¼
 
 //template<class T>
 //typename std::enable_if<std::is_arithmetic<T>::value, T>::type foo(T t)
@@ -101,7 +101,7 @@ int test(int a)
 //	return t;
 //}
 
-//2.ÏŞ¶¨Ä£°æÈë²ÎÀàĞÍ
+//2.é™å®šæ¨¡ç‰ˆå…¥å‚ç±»å‹
 
 //template<class T>
 //T foo(T t, typename std::enable_if <std::is_integral<T>::value,int>::type = 0)
@@ -109,7 +109,7 @@ int test(int a)
 //	return t;
 //}
 
-//3.ÏŞ¶¨¶ÔÄ£°æ²ÎÊıTÀàĞÍ
+//3.é™å®šå¯¹æ¨¡ç‰ˆå‚æ•°Tç±»å‹
 
 //template<class T, class = typename std::enable_if<std::is_integral<T>::value>::type>
 //T foo(T t)
@@ -118,22 +118,22 @@ int test(int a)
 //}
 
 
-//4.Ä£°æÌØ»¯Ê±£¬ÏŞ¶¨Ä£°æ²ÎÊı
+//4.æ¨¡ç‰ˆç‰¹åŒ–æ—¶ï¼Œé™å®šæ¨¡ç‰ˆå‚æ•°
 
 //template<class T,class Enable=void>
 //class A;
 //template<class T>
 //class A < T, typename std::enable_if<std::is_floating_point<T>::value>::type>{};
-//A<double> a;//ÕıÈ·
-////A<int> b;   //´íÎó
+//A<double> a;//æ­£ç¡®
+////A<int> b;   //é”™è¯¯
 
-///////¡ñ¡ñ¡ñ¡ñ¡ñ¡ñ 3.2¿É±ä²ÎÊıÄ£°æ
+///////â—â—â—â—â—â— 3.2å¯å˜å‚æ•°æ¨¡ç‰ˆ
 
-//¡ñ1.µİ¹éº¯Êı·½Ê½Õ¹¿ª²ÎÊı°ü
+//â—1.é€’å½’å‡½æ•°æ–¹å¼å±•å¼€å‚æ•°åŒ…
 
 //void f()
 //{
-//	cout << "½áÊøµİ¹é" << endl;
+//	cout << "ç»“æŸé€’å½’" << endl;
 //}
 //template<class T,class ...Args>
 //void f(T val,Args ...reset)
@@ -142,7 +142,7 @@ int test(int a)
 //	f(reset...);
 //}
 
-//¡ñ2.¶ººÅ±í´ïÊ½ºÍ³õÊ¼»¯ÁĞ±í·½Ê½Õ¹¿ª²ÎÊı°ü
+//â—2.é€—å·è¡¨è¾¾å¼å’Œåˆå§‹åŒ–åˆ—è¡¨æ–¹å¼å±•å¼€å‚æ•°åŒ…
 
  /*
  template<class T>
@@ -161,14 +161,14 @@ void expand(Args...args)
 int main()
  {
 
-	///////¡ï¡ï¡ï¡ï¡ï¡ï 3.1 type_traits
+	///////â˜…â˜…â˜…â˜…â˜…â˜… 3.1 type_traits
 
-	//¡ï1.¼òµ¥µÄtype_traits
+	//â˜…1.ç®€å•çš„type_traits
 
 	/*A<int> a;
 	cout << a.value << endl;*/
 
-	//¡ï2.ÀàĞÍÅĞ¶¨µÄtype_traits
+	//â˜…2.ç±»å‹åˆ¤å®šçš„type_traits
 
 	/*cout << "int:" << std::is_const<int>::value << endl;
 	cout << "int&:" << std::is_const<int const>::value << endl;
@@ -177,29 +177,29 @@ int main()
 	cout << "int *const:" << std::is_const<int*const>::value  << endl;*/
 
 
-	//¡ï3.ÅĞ¶ÏÁ½¸öÀàĞÍÖ®¼äµÄ¹ØÏµµÄtraits
+	//â˜…3.åˆ¤æ–­ä¸¤ä¸ªç±»å‹ä¹‹é—´çš„å…³ç³»çš„traits
 	
-	//is_sameµÄÊ¹ÓÃ
+	//is_sameçš„ä½¿ç”¨
 
 	/*cout << std::is_same<int, int>::value << endl;
 	cout << std::is_same<int, int&>::value << endl;
 	cout << std::is_same<int, char>::value << endl;*/
 
-   //is_base_ofµÄÊ¹ÓÃ£¨ÓÃÀ´ÅĞ¶ÏÔÚ±àÒëÆÚÁ½¸öÀàĞÍÊÇ·ñÎª¼Ì³Ğ¹ØÏµ£©
+   //is_base_ofçš„ä½¿ç”¨ï¼ˆç”¨æ¥åˆ¤æ–­åœ¨ç¼–è¯‘æœŸä¸¤ä¸ªç±»å‹æ˜¯å¦ä¸ºç»§æ‰¿å…³ç³»ï¼‰
 
 	/*cout << std::is_base_of<A, B>::value << endl;
 	cout << std::is_base_of<B, A>::value << endl;
 	cout << std::is_base_of<A, C>::value << endl;*/
 
-   //is_convertibleµÄÊ¹ÓÃ£¨ÓÃÀ´ÅĞ¶ÏÇ°ÃæµÄÄ£°æ²ÎÊıÊÇ·ñ¿ÉÒÔ×ª»¯ÎªºóÃæµÄÄ£°æ²ÎÊı£©
+   //is_convertibleçš„ä½¿ç”¨ï¼ˆç”¨æ¥åˆ¤æ–­å‰é¢çš„æ¨¡ç‰ˆå‚æ•°æ˜¯å¦å¯ä»¥è½¬åŒ–ä¸ºåé¢çš„æ¨¡ç‰ˆå‚æ•°ï¼‰
 
 	/*cout << std::is_convertible<A*, B*>::value << endl;
 	cout << std::is_convertible<B*, A*>::value << endl;
 	cout << std::is_convertible<A*, C*>::value << endl;*/
 
-	//¡ï4.ÀàĞÍµÄ×ª»¯traits
+	//â˜…4.ç±»å‹çš„è½¬åŒ–traits
 
-	//Ìí¼Ó»òÕßÒÆ³ıconst£¬reference,pointer
+	//æ·»åŠ æˆ–è€…ç§»é™¤constï¼Œreference,pointer
 	/*
 	cout << std::is_same<const int, add_const<int>::type>::value << endl;
 	cout << std::is_same<int, remove_const<int>::type>::value << endl;
@@ -210,17 +210,17 @@ int main()
 	cout << std::is_same<int*, add_pointer<int>::type>::value << endl;
 	cout << std::is_same<int, remove_pointer<int*>::type>::value << endl;
 	*/
-	//ÒÆ³ıÊı×éµÄ¶¥²ãÎ¬¶È
+	//ç§»é™¤æ•°ç»„çš„é¡¶å±‚ç»´åº¦
 	/*
 	cout << std::is_same<int, remove_extent<int[]>::type>::value << endl;
 	cout << std::is_same<int[5], remove_extent<int[][5]>::type>::value << endl;
 	*/
-	//ÒÆ³ıÊı×éµÄËùÓĞÎ¬¶È
+	//ç§»é™¤æ•°ç»„çš„æ‰€æœ‰ç»´åº¦
 	/*
 	cout << std::is_same<int, remove_all_extents<int[][3][4]>::type>::value << endl;
 	*/
 
-	//ÒÆ³ı´øÓĞcv·ûµÄÒıÓÃÀàĞÍ£¨const,volatile),¿ÉÓÃstd::decay±£´æº¯ÊıÖ¸Õë
+	//ç§»é™¤å¸¦æœ‰cvç¬¦çš„å¼•ç”¨ç±»å‹ï¼ˆconst,volatile),å¯ç”¨std::decayä¿å­˜å‡½æ•°æŒ‡é’ˆ
 	/*
 	using A = std::decay<int>::type;        //int
 	using B = std::decay<int&>::type;       //int
@@ -235,14 +235,14 @@ int main()
 	pb(88);
 	*/
 
-	//È¡¹«¹²ÀàĞÍ(ÔõÃ´¸Ğ¾õ·ÅÔÚ×îºóÃæ²¢ÇÒÏàÍ¬µÄ²Å¿ÉÒÔÎª1ÄØ£¿ÓĞµãĞ¡¾À½á£©
+	//å–å…¬å…±ç±»å‹(æ€ä¹ˆæ„Ÿè§‰æ”¾åœ¨æœ€åé¢å¹¶ä¸”ç›¸åŒçš„æ‰å¯ä»¥ä¸º1å‘¢ï¼Ÿæœ‰ç‚¹å°çº ç»“ï¼‰
 	/*
 	using NumericType=std::common_type<unsigned char, short, int>::type ;
 	cout << std::is_same<int, NumericType>::value << endl;
 	*/
 
 
-	//ÒÆ³ıºÍÌí¼ÓÒıÓÃµÄÀı×Ó
+	//ç§»é™¤å’Œæ·»åŠ å¼•ç”¨çš„ä¾‹å­
 	/*
 	Construct<int> c;
 	int a = c.GetObject();
@@ -250,50 +250,50 @@ int main()
 	*/
 	
 
-	///////¡ï¡ï¡ï 3.1.2 ¸ù¾İÌõ¼şÑ¡ÔñµÄtraits(std::conditional)
+	///////â˜…â˜…â˜… 3.1.2 æ ¹æ®æ¡ä»¶é€‰æ‹©çš„traits(std::conditional)
 
 	/*using A = std::conditional<true, int, double>::type;
 	using B = std::conditional<false, unsigned int, char>::type;*/
 
 
-	///////¡ï¡ï¡ï 3.1.3 »ñÈ¡¿Éµ÷ÓÃ¶ÔÏó·µ»ØÀàĞÍµÄtraits(std::result_of)
+	///////â˜…â˜…â˜… 3.1.3 è·å–å¯è°ƒç”¨å¯¹è±¡è¿”å›ç±»å‹çš„traits(std::result_of)
 
-	// std::declval¿ÉÒÔ»ñÈ¡ÈÎºÎ¶ÔÏóµÄÁÙÊ±Öµ£¬²»¹ÜËüÓĞÃ»ÓĞÄ¬ÈÏµÄ¹¹Ôìº¯Êı
-	// µ«ÊÇÆä»ñÈ¡µÄÁÙÊ±ÖµÒıÓÃ²»¿ÉÒÔÓÃÓÚÇóÖµ£¬Òª½áºÏdecltypeÀ´ÍÆµ¼ÀàĞÍ¡£
+	// std::declvalå¯ä»¥è·å–ä»»ä½•å¯¹è±¡çš„ä¸´æ—¶å€¼ï¼Œä¸ç®¡å®ƒæœ‰æ²¡æœ‰é»˜è®¤çš„æ„é€ å‡½æ•°
+	// ä½†æ˜¯å…¶è·å–çš„ä¸´æ—¶å€¼å¼•ç”¨ä¸å¯ä»¥ç”¨äºæ±‚å€¼ï¼Œè¦ç»“åˆdecltypeæ¥æ¨å¯¼ç±»å‹ã€‚
 
    /* decltype(std::declval<A>()(std::declval<int>())) i = 66;
    cout << i << endl;*/
-   //Ê¹ÓÃstd::result_ofy
+   //ä½¿ç”¨std::result_of
    /* std::result_of<A(int)>::type x = 77;
    cout << x << endl;*/
 
-   ///////¡ï¡ï¡ï 3.1.4¸ù¾İÌõ¼ş½ûÓÃ»òÕßÆô¶¯Ä³Ğ©ÀàĞÍµÄtraits(std::enable_if)
+   ///////â˜…â˜…â˜… 3.1.4æ ¹æ®æ¡ä»¶ç¦ç”¨æˆ–è€…å¯åŠ¨æŸäº›ç±»å‹çš„traits(std::enable_if)
     
-   //¡ï1.ÏŞ¶¨×ö·µ»ØÖµ
+   //â˜…1.é™å®šåšè¿”å›å€¼
    /*
    auto t1 = foo(1);
    auto t2 = foo(1.4);
    // auto t3 = foo("error");
    */
-   //¡ï2.ÏŞ¶¨Ä£°æ¶¨Òå
-   //¡ï3.ÏŞ¶¨¶ÔÄ£°æ²ÎÊıTÀàĞÍ
-   //¡ï4.Ä£°æÌØ»¯Ê±£¬ÏŞ¶¨Ä£°æ²ÎÊı
+   //â˜…2.é™å®šæ¨¡ç‰ˆå®šä¹‰
+   //â˜…3.é™å®šå¯¹æ¨¡ç‰ˆå‚æ•°Tç±»å‹
+   //â˜…4.æ¨¡ç‰ˆç‰¹åŒ–æ—¶ï¼Œé™å®šæ¨¡ç‰ˆå‚æ•°
 
-   ///////¡ï¡ï¡ï¡ï¡ï¡ï 3.2¿É±ä²ÎÊıÄ£°æ
+   ///////â˜…â˜…â˜…â˜…â˜…â˜… 3.2å¯å˜å‚æ•°æ¨¡ç‰ˆ
         
-  ///////¡ï¡ï¡ï3.2.1¿É±ä²ÎÊıÄ£°æº¯Êı
+  ///////â˜…â˜…â˜…3.2.1å¯å˜å‚æ•°æ¨¡ç‰ˆå‡½æ•°
 
-   //¡ï1.µİ¹é·½Ê½Õ¹¿ª²ÎÊı°ü
+   //â˜…1.é€’å½’æ–¹å¼å±•å¼€å‚æ•°åŒ…
 
    /* 
     f(1,683, 212, 34);
    */
  
-   //¡ï2.¶ººÅ±í´ïÊ½ºÍ³õÊ¼»¯ÁĞ±í·½Ê½Õ¹¿ª²ÎÊı°ü
+   //â˜…2.é€—å·è¡¨è¾¾å¼å’Œåˆå§‹åŒ–åˆ—è¡¨æ–¹å¼å±•å¼€å‚æ•°åŒ…
    /*
    expand(1, 343, 656, 24);
    */
 
-    cout << "¿ª·¹¿ª·¹" << endl;
+    cout << "å¼€é¥­å¼€é¥­" << endl;
 	return 0;
 }
